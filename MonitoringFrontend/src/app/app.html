@@ -1,0 +1,90 @@
+<div class="container">
+  <h1>Панель мониторинга</h1>
+
+  <div class="dashboard">
+
+    <div class="panel">
+      <h2>Устройства ({{ totalDevices }})</h2>
+
+      <div class="controls">
+        <button (click)="prevPage()" [disabled]="filter.offset === 0">← Назад</button>
+        <span>Пропущено: {{ filter.offset }}</span>
+        <button (click)="nextPage()">Вперед →</button>
+      </div>
+
+      <ul class="device-list">
+        @for (device of devices; track device.id) {
+          <li (click)="onSelectDevice(device.id)"
+              [class.active]="device.id === selectedDeviceId">
+
+            <div class="device-id">{{ device.id }}</div>
+
+            <div class="device-time">
+              Последняя сессия: {{ device.lastSeenAt | date:'medium' }}
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+
+    @if (selectedDeviceId) {
+      <div class="panel">
+        <h2>Сессии устройства ({{ totalSessions }})</h2>
+        <small>ID: {{ selectedDeviceId }}</small>
+
+        <div class="actions-panel">
+          <div class="delete-group">
+            <label>Удалить старые (по дате):</label>
+            <input type="datetime-local" #dateInput class="date-picker">
+          </div>
+
+          <button class="btn-delete"
+                  (click)="deleteData(dateInput.value)">
+            Удалить выбранное
+          </button>
+        </div>
+
+        <div class="controls" style="margin-top: 10px;">
+          <button (click)="prevSessionPage()" [disabled]="sessionFilter.offset === 0">← Назад</button>
+          <span>Стр. {{ (sessionFilter.offset / sessionFilter.limit) + 1 }}</span>
+          <button (click)="nextSessionPage()">Вперед →</button>
+        </div>
+
+        <table class="session-table">
+          <thead>
+          <tr>
+            <th style="width: 30px;">
+              <input type="checkbox" (change)="toggleAllSessions($event)">
+            </th>
+            <th>Имя</th>
+            <th>Начало</th>
+            <th>Конец</th>
+            <th>Версия</th>
+          </tr>
+          </thead>
+          <tbody>
+            @for (session of selectedSessions; track session.id) {
+
+              <tr [class.selected-row]="isSessionSelected(session)">
+                <td>
+                  <input type="checkbox"
+                         [checked]="isSessionSelected(session)"
+                         (change)="toggleSession(session.id)">
+                </td>
+                <td>{{ session.name }}</td>
+                <td>{{ session.startTime | date:'short' }}</td>
+                <td>{{ session.endTime | date:'short' }}</td>
+                <td>{{ session.version }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else {
+      <div class="panel empty">
+        <p>Выберите устройство слева, чтобы увидеть историю и управление.</p>
+      </div>
+    }
+
+  </div>
+</div>
