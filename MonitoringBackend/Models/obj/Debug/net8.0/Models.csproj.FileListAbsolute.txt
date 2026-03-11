@@ -1,0 +1,14 @@
+D:\Rider Projects\InfotecsBackend\Models\bin\Debug\net8.0\Models.deps.json
+D:\Rider Projects\InfotecsBackend\Models\bin\Debug\net8.0\Models.dll
+D:\Rider Projects\InfotecsBackend\Models\bin\Debug\net8.0\Models.pdb
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\Models.dll
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\refint\Models.dll
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\Models.pdb
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\ref\Models.dll
+D:\Rider Projects\InfotecsBackend\Models\bin\Debug\net8.0\Models.xml
+D:\Rider Projects\InfotecsBackend\Models\obj\Debug\net8.0\Models.xml

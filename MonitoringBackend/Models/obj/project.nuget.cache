@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7n8uREwVrgY=",
+  "success": true,
+  "projectFilePath": "D:\\Rider Projects\\Infotecs\\InfotecsBackend\\Models\\Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\geoor\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\geoor\\.nuget\\packages\\semver\\3.0.0\\semver.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

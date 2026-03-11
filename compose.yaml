@@ -1,0 +1,43 @@
+﻿services:
+  monitoringbackend:
+    image: monitoringbackend
+    build:
+      context: ./MonitoringBackend
+      dockerfile: ./MonitoringBackend/Dockerfile
+    environment:
+      ConnectionStrings__SessionsDbContext: "User ID=postgres;Password=1;Host=session-db;Port=5432;Database=sessionDb;"
+    ports:
+      - "5236:8080"
+    depends_on:
+      session-db:
+        condition: service_healthy
+
+  session-db:
+    image: postgres:latest
+    container_name: session-db
+    environment:
+      POSTGRES_PASSWORD: 1
+      POSTGRES_USER: postgres
+      POSTGRES_DB: sessionDb
+    ports:
+      - "5435:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - session-data:/var/lib/postgresql/
+
+  monitoringFrontend:
+    image: monitoring-frontend
+    build:
+      context: ./MonitoringFrontend
+      dockerfile: ./Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - monitoringbackend
+
+volumes:
+  session-data:

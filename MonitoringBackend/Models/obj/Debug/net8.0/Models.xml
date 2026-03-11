@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Models</name>
+    </assembly>
+    <members>
+        <member name="T:Models.DTOs.Devices.DeviceInfo">
+            <summary>
+            Информация об устройстве
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Devices.DeviceInfo.Id">
+            <summary>
+            Идентификатор устройства
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Devices.DeviceInfo.CreatedAt">
+            <summary>
+            Дата появления первой записи об устройстве
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Devices.DeviceInfo.LastSeenAt">
+            <summary>
+            Дата последнего использования устройства
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Devices.DeviceInfo.SessionsCount">
+            <summary>
+            Общее количество сессий на устройстве
+            </summary>
+        </member>
+        <member name="T:Models.DTOs.Pagination.Page`1">
+            <summary>
+            Страница для пагинации
+            </summary>
+            <typeparam name="T">Элементы, которые будут в странице</typeparam>
+        </member>
+        <member name="M:Models.DTOs.Pagination.Page`1.#ctor(System.Collections.Generic.ICollection{`0},System.Int32)">
+            <summary>
+            Страница для пагинации
+            </summary>
+            <typeparam name="T">Элементы, которые будут в странице</typeparam>
+        </member>
+        <member name="P:Models.DTOs.Pagination.Page`1.Items">
+            <summary>
+            Элементы страницы
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Pagination.Page`1.TotalCount">
+            <summary>
+            Количество элементов на странице
+            </summary>
+        </member>
+        <member name="T:Models.DTOs.Pagination.PaginationFilter">
+            <summary>
+            Фильтр для пагинации
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Pagination.PaginationFilter.Limit">
+            <summary>
+            Лимит записей
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Pagination.PaginationFilter.Offset">
+            <summary>
+            Смещение записей
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Pagination.PaginationFilter.SortDirection">
+            <summary>
+            <inheritdoc cref="P:Models.DTOs.Pagination.PaginationFilter.SortDirection"/>
+            </summary>
+        </member>
+        <member name="T:Models.DTOs.Pagination.SortDirection">
+            <summary>
+            Направления сортировки
+            </summary>
+        </member>
+        <member name="F:Models.DTOs.Pagination.SortDirection.Asc">
+            <summary>
+            По возрастанию
+            </summary>
+        </member>
+        <member name="F:Models.DTOs.Pagination.SortDirection.Desc">
+            <summary>
+            По убыванию
+            </summary>
+        </member>
+        <member name="T:Models.DTOs.Sessions.DeleteParameters">
+            <summary>
+            Параметры на удаление записей
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.DeleteParameters.CleanupDate">
+            <summary>
+            Дата, информацию старше которой нужно удалить
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.DeleteParameters.DeviceId">
+            <summary>
+            Идентификатор девайса, у которого нужно удалить сессии
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.DeleteParameters.SessionIds">
+            <summary>
+            Список сессий, которые нужно удалить
+            </summary>
+        </member>
+        <member name="T:Models.DTOs.Sessions.SessionInfo">
+            <summary>
+            Информация о Сессии
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.SessionInfo.Id">
+            <summary>
+            Идентификатор сессии
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.SessionInfo.DeviceId">
+            <summary>
+            Идентификатор устройства, которому принадлежит данная сессия 
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.SessionInfo.Name">
+            <summary>
+            Имя пользователя
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.SessionInfo.StartTime">
+            <summary>
+            Начало сессии
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.SessionInfo.EndTime">
+            <summary>
+            Конец сессии
+            </summary>
+        </member>
+        <member name="P:Models.DTOs.Sessions.SessionInfo.Version">
+            <summary>
+            Версия, установленного приложения
+            </summary>
+        </member>
+    </members>
+</doc>
